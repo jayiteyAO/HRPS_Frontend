@@ -1,0 +1,753 @@
+{
+  "access_levels": [
+    "view",
+    "create",
+    "update",
+    "approve",
+    "manage"
+  ],
+  "roles": {
+    "Employee": {
+      "modules": {
+        "1. Grievance Management": [
+          "create",
+          "view"
+        ],
+        "2. Welfare Management": [
+          "create",
+          "view"
+        ],
+        "3. Appraisal / Performance Management": [
+          "view"
+        ],
+        "4. Recruitment Management": [
+          "view"
+        ],
+        "5. Leave Management": [
+          "create",
+          "view"
+        ],
+        "6. Learning Management": [
+          "view"
+        ],
+        "7. Employee Management": [
+          "update",
+          "view"
+        ],
+        "8. Succession Planning": [
+          "view"
+        ],
+        "9. Disciplinary Actions Management": [
+          "create"
+        ],
+        "10. Employee Self-Service": [
+          "create",
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "view"
+        ],
+        "12. Payroll & Loan Management": [
+          "create"
+        ],
+        "13. Travel and Expense Tracking": [
+          "create",
+          "view"
+        ],
+        "14. Compensation & Benefits Management": [
+          "view"
+        ]
+      },
+      "views": [
+        "Grievance Submission",
+        "Case Tracking & Escalation",
+        "Resolution & Reporting",
+        "Welfare Fund Administration",
+        "Welfare Fund Administration",
+        "Welfare Event Management",
+        "Welfare Event Management",
+        "Goal Setting & Tracking",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Job Requisition & Approval",
+        "Applicant Tracking System (ATS)",
+        "Leave Request & Approval Workflow",
+        "Leave Analytics",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Organizational Structure",
+        "Employment Lifecycle Tracking",
+        "Talent Pool Management",
+        "Case Investigation & Outcome",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Requests & Approvals Portal",
+        "Biometric / Clock-In Integration",
+        "Loan Management",
+        "Expense Reimbursement",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Benefits Administration"
+      ]
+    },
+    "Manager/HOD": {
+      "modules": {
+        "1. Grievance Management": [
+          "update",
+          "view"
+        ],
+        "3. Appraisal / Performance Management": [
+          "approve",
+          "view"
+        ],
+        "4. Recruitment Management": [
+          "update",
+          "view"
+        ],
+        "5. Leave Management": [
+          "update"
+        ],
+        "6. Learning Management": [
+          "approve",
+          "view"
+        ],
+        "7. Employee Management": [
+          "update",
+          "view"
+        ],
+        "8. Succession Planning": [
+          "approve",
+          "view"
+        ],
+        "9. Disciplinary Actions Management": [
+          "update"
+        ],
+        "10. Employee Self-Service": [
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "update",
+          "approve",
+          "view"
+        ],
+        "12. Payroll & Loan Management": [
+          "update"
+        ],
+        "13. Travel and Expense Tracking": [
+          "view"
+        ],
+        "14. Compensation & Benefits Management": [
+          "approve",
+          "view"
+        ],
+        "18. Reports and Dashboards": [
+          "update"
+        ]
+      },
+      "views": [
+        "Case Tracking & Escalation",
+        "Resolution & Reporting",
+        "Goal Setting & Tracking",
+        "Goal Setting & Tracking",
+        "Appraisal Review & Scoring",
+        "Applicant Tracking System (ATS)",
+        "Onboarding Integration",
+        "Leave Analytics",
+        "Course Catalog & Enrollment",
+        "Training Needs Analysis",
+        "Organizational Structure",
+        "Employment Lifecycle Tracking",
+        "Role Criticality Mapping",
+        "Talent Pool Management",
+        "Incident Logging",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Biometric / Clock-In Integration",
+        "Attendance Reconciliation",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Analytics & Reporting"
+      ]
+    },
+    "HR Officer": {
+      "modules": {
+        "1. Grievance Management": [
+          "manage"
+        ],
+        "2. Welfare Management": [
+          "manage"
+        ],
+        "3. Appraisal / Performance Management": [
+          "manage"
+        ],
+        "4. Recruitment Management": [
+          "manage"
+        ],
+        "5. Leave Management": [
+          "manage",
+          "view"
+        ],
+        "6. Learning Management": [
+          "manage"
+        ],
+        "7. Employee Management": [
+          "manage",
+          "view"
+        ],
+        "8. Succession Planning": [
+          "manage"
+        ],
+        "10. Employee Self-Service": [
+          "manage",
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "view",
+          "manage"
+        ],
+        "12. Payroll & Loan Management": [
+          "view"
+        ],
+        "13. Travel and Expense Tracking": [
+          "manage"
+        ],
+        "14. Compensation & Benefits Management": [
+          "manage",
+          "view"
+        ],
+        "15. Workflow and Approvals": [
+          "manage"
+        ],
+        "18. Reports and Dashboards": [
+          "view"
+        ]
+      },
+      "views": [
+        "Case Tracking & Escalation",
+        "Resolution & Reporting",
+        "Welfare Fund Administration",
+        "Welfare Event Management",
+        "Goal Setting & Tracking",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Job Requisition & Approval",
+        "Applicant Tracking System (ATS)",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Organizational Structure",
+        "Employment Lifecycle Tracking",
+        "Talent Pool Management",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Biometric / Clock-In Integration",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Benefits Administration",
+        "Dynamic Workflow Builder",
+        "Analytics & Reporting"
+      ]
+    },
+    "HR Admin": {
+      "modules": {
+        "Module": [
+          "manage"
+        ],
+        "1. Grievance Management": [
+          "manage"
+        ],
+        "2. Welfare Management": [
+          "manage"
+        ],
+        "3. Appraisal / Performance Management": [
+          "manage"
+        ],
+        "4. Recruitment Management": [
+          "manage"
+        ],
+        "5. Leave Management": [
+          "manage"
+        ],
+        "6. Learning Management": [
+          "manage"
+        ],
+        "7. Employee Management": [
+          "manage"
+        ],
+        "8. Succession Planning": [
+          "manage"
+        ],
+        "9. Disciplinary Actions Management": [
+          "manage"
+        ],
+        "10. Employee Self-Service": [
+          "manage"
+        ],
+        "11. Time and Attendance": [
+          "manage"
+        ],
+        "12. Payroll & Loan Management": [
+          "manage"
+        ],
+        "13. Travel and Expense Tracking": [
+          "manage"
+        ],
+        "14. Compensation & Benefits Management": [
+          "manage"
+        ],
+        "15. Workflow and Approvals": [
+          "manage"
+        ],
+        "18. Reports and Dashboards": [
+          "manage"
+        ]
+      },
+      "views": [
+        "Feature",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Resolution & Reporting",
+        "Resolution & Reporting",
+        "Resolution & Reporting",
+        "Welfare Fund Administration",
+        "Welfare Fund Administration",
+        "Welfare Fund Administration",
+        "Welfare Event Management",
+        "Welfare Event Management",
+        "Welfare Event Management",
+        "Goal Setting & Tracking",
+        "Goal Setting & Tracking",
+        "Goal Setting & Tracking",
+        "360-Degree Feedback",
+        "360-Degree Feedback",
+        "360-Degree Feedback",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Job Requisition & Approval",
+        "Job Requisition & Approval",
+        "Job Requisition & Approval",
+        "Applicant Tracking System (ATS)",
+        "Applicant Tracking System (ATS)",
+        "Applicant Tracking System (ATS)",
+        "Onboarding Integration",
+        "Onboarding Integration",
+        "Onboarding Integration",
+        "Leave Policy Configuration",
+        "Leave Policy Configuration",
+        "Leave Policy Configuration",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Training Needs Analysis",
+        "Training Needs Analysis",
+        "Training Needs Analysis",
+        "Employee Profile Management",
+        "Employee Profile Management",
+        "Employee Profile Management",
+        "Organizational Structure",
+        "Organizational Structure",
+        "Organizational Structure",
+        "Employment Lifecycle Tracking",
+        "Employment Lifecycle Tracking",
+        "Role Criticality Mapping",
+        "Role Criticality Mapping",
+        "Role Criticality Mapping",
+        "Talent Pool Management",
+        "Talent Pool Management",
+        "Talent Pool Management",
+        "Incident Logging",
+        "Incident Logging",
+        "Incident Logging",
+        "Case Investigation & Outcome",
+        "Case Investigation & Outcome",
+        "Case Investigation & Outcome",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Requests & Approvals Portal",
+        "Requests & Approvals Portal",
+        "Biometric / Clock-In Integration",
+        "Biometric / Clock-In Integration",
+        "Biometric / Clock-In Integration",
+        "Attendance Reconciliation",
+        "Attendance Reconciliation",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Payroll Processing",
+        "Payroll Processing",
+        "Loan Management",
+        "Loan Management",
+        "Loan Management",
+        "Travel Request & Approval",
+        "Travel Request & Approval",
+        "Travel Request & Approval",
+        "Expense Reimbursement",
+        "Expense Reimbursement",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Compensation Structure",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Benefits Administration",
+        "Benefits Administration",
+        "Dynamic Workflow Builder",
+        "Dynamic Workflow Builder",
+        "Dynamic Workflow Builder",
+        "Notifications & Escalations",
+        "Notifications & Escalations",
+        "Notifications & Escalations",
+        "Analytics & Reporting",
+        "Analytics & Reporting",
+        "Analytics & Reporting",
+        "Analytics & Reporting"
+      ]
+    },
+    "Finance Officer": {
+      "modules": {
+        "1. Grievance Management": [
+          "view",
+          "manage"
+        ],
+        "2. Welfare Management": [
+          "manage"
+        ],
+        "3. Appraisal / Performance Management": [
+          "view"
+        ],
+        "4. Recruitment Management": [
+          "view"
+        ],
+        "5. Leave Management": [
+          "manage",
+          "view"
+        ],
+        "7. Employee Management": [
+          "manage",
+          "view"
+        ],
+        "10. Employee Self-Service": [
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "manage"
+        ],
+        "12. Payroll & Loan Management": [
+          "view",
+          "manage"
+        ],
+        "13. Travel and Expense Tracking": [
+          "manage"
+        ],
+        "14. Compensation & Benefits Management": [
+          "manage",
+          "view"
+        ],
+        "18. Reports and Dashboards": [
+          "view"
+        ]
+      },
+      "views": [
+        "Grievance Submission",
+        "Resolution & Reporting",
+        "Welfare Fund Administration",
+        "Appraisal Review & Scoring",
+        "Applicant Tracking System (ATS)",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Organizational Structure",
+        "Organizational Structure",
+        "Profile & Document Access",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Payroll Processing",
+        "Loan Management",
+        "Loan Management",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Analytics & Reporting"
+      ]
+    },
+    "System Admin": {
+      "modules": {
+        "1. Grievance Management": [
+          "view"
+        ],
+        "3. Appraisal / Performance Management": [
+          "manage"
+        ],
+        "4. Recruitment Management": [
+          "view",
+          "manage"
+        ],
+        "5. Leave Management": [
+          "view",
+          "manage"
+        ],
+        "7. Employee Management": [
+          "view"
+        ],
+        "10. Employee Self-Service": [
+          "manage",
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "view"
+        ],
+        "12. Payroll & Loan Management": [
+          "manage",
+          "view"
+        ],
+        "13. Travel and Expense Tracking": [
+          "view",
+          "manage"
+        ],
+        "14. Compensation & Benefits Management": [
+          "view"
+        ],
+        "15. Workflow and Approvals": [
+          "manage"
+        ],
+        "18. Reports and Dashboards": [
+          "view"
+        ]
+      },
+      "views": [
+        "Resolution & Reporting",
+        "Goal Setting & Tracking",
+        "Appraisal Review & Scoring",
+        "Job Requisition & Approval",
+        "Applicant Tracking System (ATS)",
+        "Leave Request & Approval Workflow",
+        "Leave Analytics",
+        "Organizational Structure",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Loan Management",
+        "Travel Request & Approval",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Dynamic Workflow Builder",
+        "Dynamic Workflow Builder",
+        "Notifications & Escalations",
+        "Analytics & Reporting"
+      ]
+    },
+    "Executive/Auditor": {
+      "modules": {
+        "Module": [
+          "view"
+        ],
+        "1. Grievance Management": [
+          "manage",
+          "view"
+        ],
+        "2. Welfare Management": [
+          "view"
+        ],
+        "3. Appraisal / Performance Management": [
+          "manage",
+          "view"
+        ],
+        "4. Recruitment Management": [
+          "view"
+        ],
+        "5. Leave Management": [
+          "manage",
+          "view"
+        ],
+        "6. Learning Management": [
+          "manage",
+          "view"
+        ],
+        "7. Employee Management": [
+          "manage",
+          "view"
+        ],
+        "8. Succession Planning": [
+          "view"
+        ],
+        "9. Disciplinary Actions Management": [
+          "view"
+        ],
+        "10. Employee Self-Service": [
+          "manage",
+          "view"
+        ],
+        "11. Time and Attendance": [
+          "manage",
+          "view"
+        ],
+        "12. Payroll & Loan Management": [
+          "manage",
+          "view"
+        ],
+        "13. Travel and Expense Tracking": [
+          "manage",
+          "view"
+        ],
+        "14. Compensation & Benefits Management": [
+          "view"
+        ],
+        "15. Workflow and Approvals": [
+          "view"
+        ],
+        "18. Reports and Dashboards": [
+          "manage",
+          "view"
+        ]
+      },
+      "views": [
+        "Feature",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Grievance Submission",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Case Tracking & Escalation",
+        "Resolution & Reporting",
+        "Resolution & Reporting",
+        "Resolution & Reporting",
+        "Welfare Fund Administration",
+        "Welfare Fund Administration",
+        "Welfare Fund Administration",
+        "Welfare Event Management",
+        "Welfare Event Management",
+        "Welfare Event Management",
+        "Goal Setting & Tracking",
+        "Goal Setting & Tracking",
+        "Goal Setting & Tracking",
+        "360-Degree Feedback",
+        "360-Degree Feedback",
+        "360-Degree Feedback",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Appraisal Review & Scoring",
+        "Job Requisition & Approval",
+        "Job Requisition & Approval",
+        "Job Requisition & Approval",
+        "Applicant Tracking System (ATS)",
+        "Applicant Tracking System (ATS)",
+        "Applicant Tracking System (ATS)",
+        "Onboarding Integration",
+        "Onboarding Integration",
+        "Onboarding Integration",
+        "Leave Policy Configuration",
+        "Leave Policy Configuration",
+        "Leave Policy Configuration",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Request & Approval Workflow",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Leave Analytics",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Course Catalog & Enrollment",
+        "Training Needs Analysis",
+        "Training Needs Analysis",
+        "Training Needs Analysis",
+        "Employee Profile Management",
+        "Employee Profile Management",
+        "Employee Profile Management",
+        "Organizational Structure",
+        "Organizational Structure",
+        "Organizational Structure",
+        "Employment Lifecycle Tracking",
+        "Employment Lifecycle Tracking",
+        "Role Criticality Mapping",
+        "Role Criticality Mapping",
+        "Role Criticality Mapping",
+        "Talent Pool Management",
+        "Talent Pool Management",
+        "Talent Pool Management",
+        "Incident Logging",
+        "Incident Logging",
+        "Incident Logging",
+        "Case Investigation & Outcome",
+        "Case Investigation & Outcome",
+        "Case Investigation & Outcome",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Profile & Document Access",
+        "Requests & Approvals Portal",
+        "Requests & Approvals Portal",
+        "Requests & Approvals Portal",
+        "Biometric / Clock-In Integration",
+        "Biometric / Clock-In Integration",
+        "Biometric / Clock-In Integration",
+        "Attendance Reconciliation",
+        "Attendance Reconciliation",
+        "Attendance Reconciliation",
+        "Payroll Processing",
+        "Payroll Processing",
+        "Payroll Processing",
+        "Loan Management",
+        "Loan Management",
+        "Loan Management",
+        "Travel Request & Approval",
+        "Travel Request & Approval",
+        "Travel Request & Approval",
+        "Expense Reimbursement",
+        "Expense Reimbursement",
+        "Expense Reimbursement",
+        "Compensation Structure",
+        "Compensation Structure",
+        "Compensation Structure",
+        "Benefits Administration",
+        "Benefits Administration",
+        "Benefits Administration",
+        "Dynamic Workflow Builder",
+        "Dynamic Workflow Builder",
+        "Dynamic Workflow Builder",
+        "Notifications & Escalations",
+        "Notifications & Escalations",
+        "Notifications & Escalations",
+        "Analytics & Reporting",
+        "Analytics & Reporting",
+        "Analytics & Reporting",
+        "Analytics & Reporting"
+      ]
+    }
+  }
+}
