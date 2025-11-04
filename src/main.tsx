@@ -2,8 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
-import { ThemeProvider } from './contexts/ThemeContext'
-import initVh from './utils/setVh'
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import initVh from '@/utils/setVh'
+import { BrowserRouter } from 'react-router-dom'
+import { AuthProvider } from '@/contexts/AuthContext'
+import { ToastProvider } from '@/components/ToastContainer'
 
 // initialize CSS safe-vh variable for consistent viewport height (mobile fix)
 initVh()
@@ -11,7 +14,13 @@ initVh()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
-      <App />
+      <BrowserRouter>
+        <AuthProvider>
+          <ToastProvider>
+            <App />
+          </ToastProvider>
+        </AuthProvider>
+      </BrowserRouter>
     </ThemeProvider>
   </StrictMode>,
 )
