@@ -12,10 +12,6 @@ type Spec = {
 
 const spec = specRaw as unknown as Spec;
 
-export function getRoles(): string[] {
-  return Object.keys(spec.roles || {});
-}
-
 export function getModulesForRole(role: string) {
   const roleSpec = spec.roles ? spec.roles[role] : undefined;
   if (!roleSpec) return [] as { name: string; actions: string[] }[];
@@ -23,14 +19,4 @@ export function getModulesForRole(role: string) {
   return Object.keys(modules).map((k) => ({ name: k, actions: modules[k] }));
 }
 
-export function getAllModules() {
-  const roles = spec.roles || {};
-  const set = new Set<string>();
-  Object.keys(roles).forEach((r) => {
-    const modules = roles[r].modules || {};
-    Object.keys(modules).forEach((m) => set.add(m));
-  });
-  return Array.from(set);
-}
-
-export default spec;
+export { spec };
