@@ -4,10 +4,12 @@ import rbacSpec from '../../rbac_specification.json';
 export type RoleName = keyof typeof rbacSpec.roles | string;
 
 type User = {
+  id?: string;
   name: string;
   email: string;
   role: RoleName;
   token?: string;
+  username?: string;
 };
 
 type AuthContextValue = {
@@ -40,7 +42,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Dummy auth: any email/password allowed (password param is kept for API parity)
     const assignedRole = role || (email.includes('@') ? 'Employee' : 'Employee');
     const token = `fake-token-${Date.now()}`;
-    const u: User = { name: email.split('@')[0], email, role: assignedRole, token };
+    const username = email.split('@')[0];
+    const u: User = { 
+      id: `user-${Date.now()}`, 
+      name: username, 
+      username,
+      email, 
+      role: assignedRole, 
+      token 
+    };
     setUser(u);
     if (remember) {
       localStorage.setItem('hrpms_user', JSON.stringify(u));

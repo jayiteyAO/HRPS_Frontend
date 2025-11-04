@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, ReactNode } from 'react';
+import { useContext, useEffect, useState, type ReactNode } from 'react';
 import { ThemeContext } from './ThemeCore';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
@@ -6,9 +6,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     try {
       const saved = typeof window !== 'undefined' ? window.localStorage.getItem('theme') : null;
       if (saved === 'light' || saved === 'dark') return saved;
-      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
+      // Default to light mode instead of checking system preference
+      return 'light';
     } catch {
       // ignore
     }
@@ -17,12 +16,17 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
+    
+    // Always remove both classes first
+    root.classList.remove('dark', 'light');
+    body.classList.remove('dark', 'light');
+    
+    // Then add the appropriate class
+    root.classList.add(theme);
+    body.classList.add(theme);
     root.setAttribute('data-theme', theme);
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+    
     try {
       window.localStorage.setItem('theme', theme);
     } catch {
@@ -54,3 +58,5 @@ export const _internal_useTheme = () => {
   if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
   return ctx;
 };
+
+export const useTheme = _internal_useTheme;
