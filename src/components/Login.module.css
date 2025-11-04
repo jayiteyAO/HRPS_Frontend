@@ -149,6 +149,16 @@
   gap:12px;
   align-items:center;
 }
+[data-theme='dark'] .brand {
+  color: white;
+}
+
+[data-theme='dark'] select {
+  background: #1f2937;
+  color: white;
+  border-color: #4b5563;
+}
+
 .logo {
   width:44px;
   height:44px;
@@ -190,7 +200,11 @@
   flex-direction:column;
   gap:8px;
 }
-.input label { font-size:13px; color:var(--muted); font-weight:600; }
+[data-theme='dark'] .signInAsLabel {
+  color: white;
+}
+
+.input > label { font-size:13px; color:var(--muted); font-weight:600; }
 .input input {
   height:48px;
   padding: 10px 14px;

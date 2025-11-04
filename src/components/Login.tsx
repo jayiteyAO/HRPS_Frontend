@@ -1,24 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Login.module.css';
-import { useTheme } from '../hooks/useTheme';
-import { useAuth } from '../contexts/AuthContext';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useAuth } from '@/contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export function Login() {
   const { theme, toggle } = useTheme();
-  const { login } = useAuth();
-   const [email, setEmail] = useState('');
-   const [password, setPassword] = useState('');
+  const { login, user } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [role] = useState<string>('HR Admin');
+  const [remember, setRemember] = useState<boolean>(false);
+  const navigate = useNavigate();
 
-   const submit = (e: React.FormEvent) => {
-     e.preventDefault();
-    // Dummy auth: call AuthContext.login and navigate to dashboard
-    login({ email, password, remember: true }).then(() => {
-      window.location.hash = '/dashboard';
-    }).catch((err) => {
+  // If user is already logged in, redirect to dashboard
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [user, navigate]);
+
+  // Auto-populate hradmin credentials
+  useEffect(() => {
+    setEmail('hradmin@example.com');
+    setPassword('password');
+  }, []);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      // Dummy auth: call AuthContext.login and navigate to dashboard
+      await login({ email, password, role, remember });
+      navigate('/dashboard', { replace: true });
+    } catch (err) {
       console.error('Login failed', err);
       alert('Login failed');
-    });
-   };
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -68,12 +86,17 @@ export function Login() {
             <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" required />
           </div>
 
-          <div className={styles.row}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--muted)', fontWeight: 600 }}>
-              <input type="checkbox" style={{ width: 16, height: 16 }} /> Remember
+          <div style={{ marginTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <label className={styles.signInAsLabel} style={{ fontWeight: 600 }}>Sign in as</label>
+              <span style={{ padding: '8px 12px', background: '#00A4EF', color: 'white', borderRadius: 4, fontSize: '14px', fontWeight: 600 }}>
+                {role}
+              </span>
+            </div>
+            <label style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
+              <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+              <span className={styles.hint}>Remember</span>
             </label>
-
-            <a id="forgot-password" style={{ color: 'var(--muted)', textDecoration: 'none', fontWeight: 600, fontSize: 13 }} href="#forgot-password">Forgot?</a>
           </div>
 
           <div style={{ display: 'flex', gap: 12, marginTop: 6 }}>
